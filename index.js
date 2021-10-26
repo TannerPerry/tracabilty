@@ -26,6 +26,11 @@ app.get('/style', (req, res) =>{
     res.sendFile(path.join(__dirname, '/public/index.css'))
 })
 
+app.get('/warning',(req,res) =>{
+    rollbar.warning('user clicked warning button')
+    console.log('give me a warning')
+})
+
 app.use(rollbar.errorHandler())
 
 const port = process.env.PORT || 4567
