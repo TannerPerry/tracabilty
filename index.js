@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
       
 })
 app.get('/style', (req, res) =>{
-    res.sendFile(path.join(__dirname, '/public/styles.css'))
+    res.sendFile(path.join(__dirname, '/public/index.css'))
 })
 
 app.use(rollbar.errorHandler())
