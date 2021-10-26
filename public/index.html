@@ -11,13 +11,13 @@
 <body>
     <h1>this is a test</h1>
     <form>
-        <button name = warning >this button will give you a warning</button>
+        <button id = "warning">this button will give you a warning</button>
         <button>this button will give you a critical error</button>
     </form>
    <script>
-       const warningBut = document.getElementsByName("warning")
+       const warningBut = document.getElementById("warning")
 
-       const giveWarning = (e) =>{
+       function giveWarning(e){
            e.preventDefault()
            axios.get('/warning')
            .then(res => {
