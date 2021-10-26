@@ -12,10 +12,11 @@
     <h1>this is a test</h1>
     <form>
         <button id = "warning">this button will give you a warning</button>
-        <button>this button will give you a critical error</button>
+        <button id = "critical">this button will give you a critical error</button>
     </form>
    <script>
        const warningBut = document.getElementById("warning")
+       const criticalErr = document.getElementById("critical")
 
        function giveWarning(e){
            e.preventDefault()
@@ -24,7 +25,17 @@
             alert('this is a warning')
            })
        }
+       function giveCriticalError(e){
+           e.preventDefault()
+           axios.get('/critical')
+           .then(res => {
+            alert('this is a critical error')
+           })
+       }
+
+
        warningBut.addEventListener('click', giveWarning)
+       criticalErr.addEventListener('click', giveCriticalError)
    </script>
 
 </body>

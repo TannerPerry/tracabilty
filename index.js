@@ -30,6 +30,10 @@ app.get('/warning',(req,res) =>{
     rollbar.warning('user clicked warning button')
     console.log('give me a warning')
 })
+app.get('/critical',(req,res) =>{
+    rollbar.warning('user clicked critical button')
+    console.log('give me a critical error')
+})
 
 app.use(rollbar.errorHandler())
 
