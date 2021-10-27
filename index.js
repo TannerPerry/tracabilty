@@ -32,7 +32,9 @@ app.get('/warning',(req,res) =>{
 })
 app.get('/critical',(req,res) =>{
     rollbar.critical('test')
-    rollbar.critical('user clicked critical button')
+    rollbar.critical('testCrit')
+    rollbar.critical('teat critical')
+    rollbar.critical('your shit is gone')
     res.status(400).send('critical error')
     console.log('give me a critical error')
 })
